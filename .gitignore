@@ -1,0 +1,71 @@
+############################
+# 공통 (OS / Editor)
+############################
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+
+############################
+# Python / Backend (chat-server)
+############################
+__pycache__/
+*.py[cod]
+*.pyo
+
+.env
+.env.*
+!.env.example
+
+.venv/
+venv/
+ENV/
+
+# poetry
+poetry.lock
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# logs
+*.log
+
+############################
+# Node / Frontend (chat-frontend)
+############################
+node_modules/
+.next/
+out/
+dist/
+
+# npm / yarn / pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################
+# Build / Cache
+############################
+.cache/
+tmp/
+
+############################
+# Database (로컬용)
+############################
+*.sqlite3
+*.db
+
+############################
+# Redis dump (혹시 있을 경우)
+############################
+dump.rdb
+
+############################
+# OS / misc
+############################
+*.swp
+*.swo
