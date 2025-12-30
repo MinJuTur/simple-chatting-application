@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 기본 배경/텍스트 */
+html,
+body {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* 커스텀 유틸(원하면 theme.extend 색으로도 가능) */
+@layer utilities {
+  .bg-brand-500 { background-color: #10B981; }
+  .bg-brand-600 { background-color: #059669; }
+  .hover\:bg-brand-600:hover { background-color: #059669; }
+
+  .bg-bubble-meBg { background-color: #DCFCE7; }
+  .text-bubble-meText { color: #166534; }
+
+  .bg-bubble-otherBg { background-color: #F3F4F6; }
+  .text-bubble-otherText { color: #111827; }
+}
