@@ -101,15 +101,11 @@ simple-chatting-application/
 
 ## How to Run
 ### Backend
-bash
-코드 복사
 cd chat-server
 poetry install
 poetry run uvicorn app.main:app --reload --port 8000
 
 ### Frontend
-bash
-코드 복사
 cd chat-frontend
 npm install
 npm run dev
