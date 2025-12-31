@@ -41,19 +41,40 @@ WebSocket과 Redis를 활용한 **실시간 채팅 애플리케이션**입니다
 
 ## Project Structure
 
+```bash
 simple-chatting-application/
-├─ chat-server/        # FastAPI backend
-│  ├─ app/
-│  ├─ models/
-│  ├─ redis_client.py
-│  └─ main.py
+├─ chat-server/                  # FastAPI backend
+│  └─ app/
+│     ├── __init__.py
+│     ├── create_tables.py       # DB 테이블 생성 스크립트
+│     ├── db.py                  # DB 세션 / 엔진 설정
+│     ├── main.py                # FastAPI 엔트리 포인트
+│     ├── models.py              # SQLAlchemy ORM 모델
+│     ├── redis_client.py        # Redis / Valkey 클라이언트
+│     └── schemas.py             # Pydantic 스키마
 │
-├─ chat-frontend/      # Next.js frontend
-│  ├─ src/
-│  ├─ app/
-│  ├─ components/
-│  └─ lib/
+├─ chat-frontend/                # Next.js frontend
+│  └─ src/
+│     ├── app/
+│     │  ├── page.tsx            # Home
+│     │  ├── layout.tsx          # Root layout
+│     │  ├── globals.css         # Global styles (Tailwind)
+│     │  ├── signup/
+│     │  │  └── page.tsx         # User signup
+│     │  ├── enter/
+│     │  │  └── page.tsx         # User enter
+│     │  └── rooms/
+│     │     ├── page.tsx         # Room list / create
+│     │     └── [roomId]/
+│     │        └── page.tsx      # Chat room (WebSocket)
+│     │
+│     ├── components/
+│     │  └── Modal.tsx           # Reusable modal component
+│     │
+│     └── lib/
+│        └── api.ts              # Backend API / WebSocket helpers
 
+```
 
 ## Features
 🔹 User
